@@ -6,7 +6,7 @@
 USER BROWSER
     │
     ▼
-VERCEL (Edge / Serverless CDN)
+VERCEL (Edge / Serverless CDN)  ──► https://frontend-ten-inky-48.vercel.app
     │
     ├─► Next.js 14 App Router Frontend (`/`)
     │
@@ -23,7 +23,17 @@ VERCEL (Edge / Serverless CDN)
 
 ---
 
-## 2. Environment Variables Specification
+## 2. Live Deployed Endpoints
+
+- **Vercel Production Frontend:** [`https://frontend-ten-inky-48.vercel.app`](https://frontend-ten-inky-48.vercel.app)
+- **Vercel Project Dashboard:** `https://vercel.com/sanjai-e242s-projects/frontend`
+- **GitHub Repository:** [`https://github.com/Sanjai-E242/satquery-ai.git`](https://github.com/Sanjai-E242/satquery-ai.git)
+- **Local Development Frontend:** `http://localhost:3000`
+- **Local Development Backend:** `http://127.0.0.1:8000`
+
+---
+
+## 3. Environment Variables Specification
 
 ### Frontend (`frontend/.env.local` / Vercel Environment Variables)
 | Variable | Description | Example (Production) | Default (Local) |
@@ -35,31 +45,25 @@ VERCEL (Edge / Serverless CDN)
 | Variable | Description | Example (Production) | Default (Local) |
 | :--- | :--- | :--- | :--- |
 | `PROJECT_NAME` | Service Identifier | `SATQUERY AI` | `SATQUERY AI` |
-| `FRONTEND_URL` | Allowed origin for CORS | `https://satquery-ai.vercel.app` | `http://localhost:3000` |
+| `FRONTEND_URL` | Allowed origin for CORS | `https://frontend-ten-inky-48.vercel.app` | `http://localhost:3000` |
 | `DEMO_MODE` | Active PyTorch VLM inference mode | `true` | `true` |
 | `MODEL_DEVICE` | Hardware device allocation | `cpu` or `cuda` | `auto` |
 | `MAX_UPLOAD_SIZE_MB` | Maximum allowed payload upload size | `50` | `50` |
 
 ---
 
-## 3. Frontend Deployment to Vercel
+## 4. Frontend Deployment to Vercel
 
-### Step-by-Step Vercel Setup
-1. **Import Git Repository:** In your Vercel Dashboard, import `https://github.com/Sanjai-E242/satquery-ai.git`.
-2. **Project Settings:**
-   - **Framework Preset:** `Next.js`
-   - **Root Directory:** `frontend`
-   - **Build Command:** `npm run build`
-   - **Output Directory:** `.next`
-   - **Install Command:** `npm install`
-3. **Environment Variables:**
-   - Add `NEXT_PUBLIC_API_URL` = `https://<YOUR_BACKEND_URL>`
-   - Add `BACKEND_API_URL` = `https://<YOUR_BACKEND_URL>`
-4. **Deploy:** Click **Deploy**. Vercel will automatically build and publish the frontend.
+The frontend is deployed on Vercel with:
+- **Root Directory:** `frontend`
+- **Framework Preset:** `Next.js`
+- **Build Command:** `npm run build`
+- **Output Directory:** `.next`
+- **Production URL:** `https://frontend-ten-inky-48.vercel.app`
 
 ---
 
-## 4. Backend Deployment (Render / Docker / Railway)
+## 5. Backend Deployment (Render / Docker / Railway)
 
 ### Deploying with Docker
 ```bash
@@ -67,7 +71,7 @@ VERCEL (Edge / Serverless CDN)
 docker build -t satquery-ai-backend .
 
 # Run container exposing port 8000
-docker run -p 8000:8000 -e FRONTEND_URL="https://satquery-ai.vercel.app" satquery-ai-backend
+docker run -p 8000:8000 -e FRONTEND_URL="https://frontend-ten-inky-48.vercel.app" satquery-ai-backend
 ```
 
 ### Deploying on Render (using `render.yaml`)
@@ -77,21 +81,4 @@ docker run -p 8000:8000 -e FRONTEND_URL="https://satquery-ai.vercel.app" satquer
    - **Environment:** `Python 3.9+`
    - **Build Command:** `pip install -r backend/requirements.txt`
    - **Start Command:** `cd backend && uvicorn app.main:app --host 0.0.0.0 --port $PORT`
-4. Set `FRONTEND_URL` to your Vercel frontend URL.
-
----
-
-## 5. Local Development Quickstart
-
-```bash
-# 1. Start Backend
-cd backend
-python3 -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
-uvicorn app.main:app --host 127.0.0.1 --port 8000
-
-# 2. Start Frontend
-cd frontend
-npm install
-npm run dev # (or npm run build && npm run start)
-```
+4. Set `FRONTEND_URL` to `https://frontend-ten-inky-48.vercel.app`.
