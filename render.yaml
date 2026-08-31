@@ -4,7 +4,7 @@ services:
     name: satquery-ai-backend
     env: python
     buildCommand: pip install -r backend/requirements.txt
-    startCommand: cd backend && uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    startCommand: PYTHONPATH=backend uvicorn app.main:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: PYTHON_VERSION
         value: 3.9.18
@@ -15,4 +15,4 @@ services:
       - key: MODEL_DEVICE
         value: "cpu"
       - key: FRONTEND_URL
-        sync: false
+        value: "https://frontend-ten-inky-48.vercel.app"

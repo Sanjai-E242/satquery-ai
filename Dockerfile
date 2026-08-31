@@ -26,7 +26,10 @@ RUN mkdir -p /app/storage/uploads /app/storage/generated /app/outputs
 
 ENV PYTHONPATH=/app/backend
 ENV PORT=8000
+ENV DEMO_MODE=true
+ENV MODEL_DEVICE=cpu
+ENV FRONTEND_URL=https://frontend-ten-inky-48.vercel.app
 
 EXPOSE 8000
 
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["sh", "-c", "PYTHONPATH=/app/backend uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000}"]
