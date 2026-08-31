@@ -5,7 +5,13 @@ export const maxDuration = 300; // Allow long-running PyTorch deep model inferen
 
 async function handleProxy(req: NextRequest, { params }: { params: { path: string[] } }) {
   const subpath = (params.path || []).join('/');
-  const targetUrl = new URL(`http://127.0.0.1:8000/api/${subpath}`);
+  const backendBase = (
+    process.env.BACKEND_API_URL || 
+    process.env.NEXT_PUBLIC_API_URL || 
+    'http://127.0.0.1:8000'
+  ).replace(/\/$/, '');
+  
+  const targetUrl = new URL(`${backendBase}/api/${subpath}`);
   
   // Forward all query search parameters
   req.nextUrl.searchParams.forEach((val, key) => {

@@ -54,3 +54,7 @@ datasets/
 storage/generated/
 storage/uploads/
 media/uploads/
+outputs/satquery_report_*
+outputs/*.pdf
+outputs/*.json
+!outputs/bigearthnet_dataset_report.*

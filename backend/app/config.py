@@ -14,6 +14,10 @@ class Settings(BaseSettings):
     MODEL_DEVICE: str = "auto"
     MAX_UPLOAD_SIZE_MB: int = 50
     DATABASE_URL: str = ""
+    
+    # Production Networking & CORS
+    FRONTEND_URL: str = ""
+    BACKEND_URL: str = ""
 
     model_config = SettingsConfigDict(
         env_file=".env",

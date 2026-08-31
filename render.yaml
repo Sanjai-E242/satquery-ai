@@ -1,0 +1,18 @@
+# SATQUERY AI — Render Blueprint Deployment Specification
+services:
+  - type: web
+    name: satquery-ai-backend
+    env: python
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: cd backend && uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.18
+      - key: PYTHONPATH
+        value: backend
+      - key: DEMO_MODE
+        value: "true"
+      - key: MODEL_DEVICE
+        value: "cpu"
+      - key: FRONTEND_URL
+        sync: false

@@ -1,4 +1,10 @@
 /** @type {import('next').NextConfig} */
+const backendUrl = (
+  process.env.BACKEND_API_URL || 
+  process.env.NEXT_PUBLIC_API_URL || 
+  'http://127.0.0.1:8000'
+).replace(/\/$/, '');
+
 const nextConfig = {
   reactStrictMode: true,
   images: {
@@ -8,11 +14,11 @@ const nextConfig = {
     return [
       {
         source: '/storage/:path*',
-        destination: 'http://127.0.0.1:8000/storage/:path*',
+        destination: `${backendUrl}/storage/:path*`,
       },
       {
         source: '/media/:path*',
-        destination: 'http://127.0.0.1:8000/media/:path*',
+        destination: `${backendUrl}/media/:path*`,
       },
     ];
   },

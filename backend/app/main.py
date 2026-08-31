@@ -11,10 +11,21 @@ app = FastAPI(
     description="Interactive Agentic Vision-Language Assistant for Multimodal Remote-Sensing Analysis"
 )
 
-# CORS configuration for Next.js frontend
+# Origins configuration for Next.js frontend (local & Vercel production)
+allowed_origins = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "http://localhost:8000",
+    "http://127.0.0.1:8000"
+]
+
+if settings.FRONTEND_URL:
+    allowed_origins.append(settings.FRONTEND_URL.rstrip("/"))
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=allowed_origins,
+    allow_origin_regex=r"https://.*\.vercel\.app",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
