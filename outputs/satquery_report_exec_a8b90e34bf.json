@@ -1,0 +1,58 @@
+{
+  "execution_id": "exec_a8b90e34bf",
+  "query": "What is the dominant land cover class in this satellite scene?",
+  "answer": "What is the dominant land cover class in this satellite scene",
+  "confidence": {
+    "value": 0.88,
+    "type": "model_derived"
+  },
+  "task": "captioning",
+  "input_type": "single",
+  "models_used": [
+    "microsoft/Florence-2-base (REAL_MODEL)"
+  ],
+  "tools_used": [
+    "Pretrained Florence-2 Base VLM Adapter"
+  ],
+  "execution_steps": [
+    {
+      "name": "Input Validation & Geospatial Inspection",
+      "status": "completed",
+      "duration_ms": 0,
+      "detail": "Mode: SINGLE | Primary: img_sample_opt_01_S2A_MSIL2A_20170613T101031_N9999_R022_T33UUP_45_68.png (120x120 PNG)"
+    },
+    {
+      "name": "Query Intent & Requirement Classifier",
+      "status": "completed",
+      "duration_ms": 0,
+      "detail": "Intent: CAPTIONING | Target: land_cover"
+    },
+    {
+      "name": "Specialist Model Routing & Inference",
+      "status": "completed",
+      "duration_ms": 43576,
+      "detail": "Model Loading \u2713 | Checkpoint: microsoft/Florence-2-base (REAL_MODEL) | Device: CPU | Mode: REAL_MODEL | Inference \u2713"
+    },
+    {
+      "name": "Evidence Packaging & Dynamic Confidence Calibration",
+      "status": "completed",
+      "duration_ms": 3,
+      "detail": "Confidence: 88% (model_derived) | Evidence: 1 items"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_primary",
+      "title": "Primary Satellite Input",
+      "type": "image",
+      "url": "/storage/uploads/img_sample_opt_01_S2A_MSIL2A_20170613T101031_N9999_R022_T33UUP_45_68.png",
+      "metadata": {
+        "width": 120,
+        "height": 120,
+        "modality": "Sentinel-2 Optical RGB"
+      }
+    }
+  ],
+  "duration_ms": 43589,
+  "timestamp": "2026-08-31T14:26:55Z"
+}

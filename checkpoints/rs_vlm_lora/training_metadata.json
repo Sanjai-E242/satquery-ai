@@ -1,0 +1,24 @@
+{
+  "base_model": "microsoft/Florence-2-base",
+  "dataset": "BigEarthNet-S2 (100 Real RGB Satellite Image Patches)",
+  "training_samples": 5,
+  "validation_samples": 5,
+  "epochs": 1,
+  "total_steps": 5,
+  "learning_rate": 0.0001,
+  "batch_size": 1,
+  "gradient_accumulation_steps": 1,
+  "max_length": 32,
+  "final_train_loss": 8.495015144348145,
+  "validation_loss": 10.495489120483398,
+  "all_parameters": 231856384,
+  "trainable_parameters": 442368,
+  "trainable_percentage": 0.19079397011556948,
+  "device": "cpu",
+  "duration_seconds": 1197.58,
+  "weight_files": [
+    "adapter_model.safetensors"
+  ],
+  "total_checkpoint_bytes": 7205933,
+  "total_checkpoint_mb": 6.87
+}

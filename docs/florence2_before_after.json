@@ -1,0 +1,42 @@
+[
+  {
+    "sample_index": 0,
+    "patch_id": "S2A_MSIL2A_20170613T101031_N9999_R022_T33UUP_48_82",
+    "prompt": "<VQA> Is there any broad-leaved forest and pastures spatially touching in this scene?",
+    "ground_truth": "yes",
+    "base_florence2_output": "QA> Is there any broad-leaved forest and pastures spatially touching in this scene",
+    "lora_florence2_output": "QA> Is there any broad-leaved forest and pastures spatially touching in this scene"
+  },
+  {
+    "sample_index": 1,
+    "patch_id": "S2A_MSIL2A_20170613T101031_N9999_R022_T33UUP_48_82",
+    "prompt": "<VQA> Does any mixed forest and urban fabrics share a common boundary?",
+    "ground_truth": "no",
+    "base_florence2_output": "QA> Does any mixed forest and urban fabrics share a common boundary",
+    "lora_florence2_output": "QA> Does any mixed forest and urban fabrics share a common boundary"
+  },
+  {
+    "sample_index": 2,
+    "patch_id": "S2A_MSIL2A_20170613T101031_N9999_R022_T33UUP_48_82",
+    "prompt": "<VQA> Do pastures cover at least 90% of the image?",
+    "ground_truth": "no",
+    "base_florence2_output": "QA> Do pastures cover at least 90% of",
+    "lora_florence2_output": "QA> Do pastures cover at least 90% of"
+  },
+  {
+    "sample_index": 3,
+    "patch_id": "S2A_MSIL2A_20170613T101031_N9999_R022_T33UUP_48_82",
+    "prompt": "<VQA> Do pastures cover a maximum of 720000 m2 of the image?",
+    "ground_truth": "yes",
+    "base_florence2_output": "QA> Do pastures cover a maximum of 720000 m2 of",
+    "lora_florence2_output": "QA> Do pastures cover a maximum of 720000 m2 of"
+  },
+  {
+    "sample_index": 4,
+    "patch_id": "S2A_MSIL2A_20170613T101031_N9999_R022_T33UUP_48_82",
+    "prompt": "<VQA> Is there exactly one continuous patch of broad-leaved forests in the image?",
+    "ground_truth": "no",
+    "base_florence2_output": "QA> Is there exactly one continuous patch of broad-leaved forests",
+    "lora_florence2_output": "QA> Is there exactly one continuous patch of broad-leaved forests"
+  }
+]

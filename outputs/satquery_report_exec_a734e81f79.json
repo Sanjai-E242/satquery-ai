@@ -1,0 +1,76 @@
+{
+  "execution_id": "exec_a734e81f79",
+  "query": "Identify land cover changes between T1 and T2 images.",
+  "answer": "PyTorch Siamese ResNet-18 Deep Feature Spatial Change Detection completed. Detected **21.18%** significant spatial change between T1 and T2 scenes (Deep Feature Mean Distance: 0.583).",
+  "confidence": {
+    "value": 0.86,
+    "type": "model_derived"
+  },
+  "task": "change_analysis",
+  "input_type": "bi_temporal",
+  "models_used": [
+    "ResNet-18 (Siamese Deep Spatial Feature Distance)"
+  ],
+  "tools_used": [
+    "PyTorch Spatial Difference & Change Mask Generator"
+  ],
+  "execution_steps": [
+    {
+      "name": "Input Validation & Geospatial Inspection",
+      "status": "completed",
+      "duration_ms": 0,
+      "detail": "Mode: BI_TEMPORAL | Primary: img_sample_opt_01_S2A_MSIL2A_20170613T101031_N9999_R022_T33UUP_45_68.png (120x120 PNG)"
+    },
+    {
+      "name": "Query Intent & Requirement Classifier",
+      "status": "completed",
+      "duration_ms": 0,
+      "detail": "Intent: CHANGE_ANALYSIS | Target: general_change"
+    },
+    {
+      "name": "Specialist Model Routing & Inference",
+      "status": "completed",
+      "duration_ms": 105,
+      "detail": "Model Loading \u2713 | Checkpoint: ResNet-18 (Siamese Deep Spatial Feature Distance) | Device: CPU | Mode: REAL_MODEL | Inference \u2713"
+    },
+    {
+      "name": "Evidence Packaging & Dynamic Confidence Calibration",
+      "status": "completed",
+      "duration_ms": 0,
+      "detail": "Confidence: 86% (model_derived) | Evidence: 3 items"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ev_primary",
+      "title": "Primary Satellite Input",
+      "type": "image",
+      "url": "/storage/uploads/img_sample_opt_01_S2A_MSIL2A_20170613T101031_N9999_R022_T33UUP_45_68.png",
+      "metadata": {
+        "width": 120,
+        "height": 120,
+        "modality": "Sentinel-2 Optical RGB"
+      }
+    },
+    {
+      "id": "ev_secondary",
+      "title": "Secondary Input Image",
+      "type": "image",
+      "url": "/storage/uploads/img_sample_sar_01_S1B_IW_GRDH_1SDV_20170612T165809_33UUP_45_68_S1_VV.png",
+      "metadata": {
+        "modality": "Sentinel-1 SAR Radar (VV/VH)"
+      }
+    },
+    {
+      "id": "ev_change_map",
+      "title": "PyTorch Spatial Change Map Overlay",
+      "type": "change_map",
+      "url": "/storage/generated/neural_change_map_42ca2046.png",
+      "metadata": {
+        "change_percentage": 21.18
+      }
+    }
+  ],
+  "duration_ms": 105,
+  "timestamp": "2026-08-31T14:25:08Z"
+}

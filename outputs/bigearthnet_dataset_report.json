@@ -1,0 +1,153 @@
+{
+  "dataset_name": "BigEarthNet.txt",
+  "file_path": "/Users/sanjai/.gemini/antigravity-ide/scratch/satquery-ai/data/BigEarthNet/BigEarthNet.txt.parquet",
+  "file_size_mb": 445.19,
+  "num_rows": 9553962,
+  "num_columns": 13,
+  "column_names": [
+    "ID",
+    "s1_name",
+    "patch_id",
+    "input",
+    "output",
+    "type",
+    "category",
+    "split",
+    "latitude",
+    "longitude",
+    "country",
+    "season",
+    "climate_zone"
+  ],
+  "column_types": {
+    "ID": "int64",
+    "s1_name": "string",
+    "patch_id": "string",
+    "input": "string",
+    "output": "string",
+    "type": "string",
+    "category": "string",
+    "split": "string",
+    "latitude": "double",
+    "longitude": "double",
+    "country": "string",
+    "season": "string",
+    "climate_zone": "string"
+  },
+  "field_detections": {
+    "image_references": [
+      "s1_name",
+      "patch_id",
+      "ID"
+    ],
+    "sentinel1_references": [
+      "s1_name"
+    ],
+    "sentinel2_references": [
+      "patch_id"
+    ],
+    "question_instruction_fields": [],
+    "answer_output_fields": [
+      "output"
+    ],
+    "split_fields": [
+      "split"
+    ],
+    "caption_fields": [],
+    "vqa_fields": [
+      "output"
+    ]
+  },
+  "sample_missing_values": {
+    "ID": 0,
+    "s1_name": 0,
+    "patch_id": 0,
+    "input": 0,
+    "output": 0,
+    "type": 0,
+    "category": 0,
+    "split": 0,
+    "latitude": 0,
+    "longitude": 0,
+    "country": 0,
+    "season": 0,
+    "climate_zone": 0
+  },
+  "sample_rows": [
+    {
+      "ID": 1,
+      "s1_name": "S1B_IW_GRDH_1SDV_20170612T165809_33UUP_26_57",
+      "patch_id": "S2A_MSIL2A_20170613T101031_N9999_R022_T33UUP_26_57",
+      "input": "Would you say that any arable land lies next to pastures in the image?",
+      "output": "yes",
+      "type": "binary",
+      "category": "adjacency",
+      "split": "test",
+      "latitude": 48.11003471465957,
+      "longitude": 12.740300299577253,
+      "country": "Austria",
+      "season": "Summer",
+      "climate_zone": "Cold, no dry season, warm summer"
+    },
+    {
+      "ID": 2,
+      "s1_name": "S1B_IW_GRDH_1SDV_20170612T165809_33UUP_26_57",
+      "patch_id": "S2A_MSIL2A_20170613T101031_N9999_R022_T33UUP_26_57",
+      "input": "Would you confirm that any broad-leaved forest borders upon pastures?",
+      "output": "no",
+      "type": "binary",
+      "category": "adjacency",
+      "split": "test",
+      "latitude": 48.11003471465957,
+      "longitude": 12.740300299577253,
+      "country": "Austria",
+      "season": "Summer",
+      "climate_zone": "Cold, no dry season, warm summer"
+    },
+    {
+      "ID": 3,
+      "s1_name": "S1B_IW_GRDH_1SDV_20170612T165809_33UUP_26_57",
+      "patch_id": "S2A_MSIL2A_20170613T101031_N9999_R022_T33UUP_26_57",
+      "input": "Do pastures cover between 864000 square meters and 1008000 square meters of the image?",
+      "output": "no",
+      "type": "binary",
+      "category": "area",
+      "split": "test",
+      "latitude": 48.11003471465957,
+      "longitude": 12.740300299577253,
+      "country": "Austria",
+      "season": "Summer",
+      "climate_zone": "Cold, no dry season, warm summer"
+    },
+    {
+      "ID": 4,
+      "s1_name": "S1B_IW_GRDH_1SDV_20170612T165809_33UUP_26_57",
+      "patch_id": "S2A_MSIL2A_20170613T101031_N9999_R022_T33UUP_26_57",
+      "input": "Do pastures take up between 0 square meters and 288000 square meters of the image?",
+      "output": "yes",
+      "type": "binary",
+      "category": "area",
+      "split": "test",
+      "latitude": 48.11003471465957,
+      "longitude": 12.740300299577253,
+      "country": "Austria",
+      "season": "Summer",
+      "climate_zone": "Cold, no dry season, warm summer"
+    },
+    {
+      "ID": 5,
+      "s1_name": "S1B_IW_GRDH_1SDV_20170612T165809_33UUP_26_57",
+      "patch_id": "S2A_MSIL2A_20170613T101031_N9999_R022_T33UUP_26_57",
+      "input": "Are pastures represented in more than one continuous area within the image?",
+      "output": "yes",
+      "type": "binary",
+      "category": "count",
+      "split": "test",
+      "latitude": 48.11003471465957,
+      "longitude": 12.740300299577253,
+      "country": "Austria",
+      "season": "Summer",
+      "climate_zone": "Cold, no dry season, warm summer"
+    }
+  ]
+}
